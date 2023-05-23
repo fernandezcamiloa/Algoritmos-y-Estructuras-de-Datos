@@ -5,9 +5,6 @@
 # c. mostrar las películas de Marvel Studios estrenadas en el año 2016.
 
 
-from random import randint
-
-
 class Pila():
     """Stack class"""
 
