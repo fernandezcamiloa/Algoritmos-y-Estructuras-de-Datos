@@ -44,25 +44,6 @@ arbol_tipo.search_by_coincidence('Fuego')
 arbol_tipo.search_by_coincidence('planta')
 arbol_tipo.search_by_coincidence('electrico')
 
-#d. determinar cuántos superhéroes hay el árbol;
-print('cantidad de superheroes', arbol.contar_heroes())
-print()
-
-#f. listar los superhéroes ordenados de manera descendente;
-print('Lista de superheroes ordenados de manera descendente:')
-arbol.postorden_super_or_villano(True)
-print()
-
-
-
-
-
-
-
-
-
-
-
 
 #d) realizar un listado en orden ascendente por número y nombre de Pokémon, y
 #además un listado por nivel por nombre;
