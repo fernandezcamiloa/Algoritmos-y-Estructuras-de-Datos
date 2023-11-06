@@ -1,4 +1,3 @@
-
 import linecache
 from cola import Cola
 
@@ -10,10 +9,9 @@ def get_value_from_file(file_name, index):
 
 class NodeTree():
 
-    def __init__(self, value, other_value1=None, other_value2=None):
+    def __init__(self, value, other_values=None):
         self.value = value
-        self.other_value1 = other_value1
-        self.other_value2 = other_value2
+        self.other_values = other_values
         self.left = None
         self.right = None
         self.height = 0
@@ -73,22 +71,22 @@ class BinaryTree:
                     root = self.double_rotation(root, False)
         return root
 
-    def insert_node(self, value, other_value1=None, other_value2=None):
+    def insert_node(self, value, other_values=None):
 
-        def __insertar(root, value, other_value1, other_value2):
+        def __insertar(root, value, other_values):
             if root is None:
-                return NodeTree (value, other_value1, other_value2)
+                return NodeTree(value, other_values)
             elif value < root.value:
-                root.left = __insertar(root.left, value, other_value1, other_value2)
+                root.left = __insertar(root.left, value, other_values)
             else:
-                root.right = __insertar(root.right, value, other_value1, other_value2)
+                root.right = __insertar(root.right, value, other_values)
             print('izquierda', self.height(root.left) - self.height(root.right))
             print('derecha', self.height(root.right) - self.height(root.left))
             root = self.balancing(root)
             self.update_height(root)
             return root
 
-        self.root = __insertar(self.root, value, other_value1, other_value2)
+        self.root = __insertar(self.root, value, other_values)
 
     def by_level(self):
         if self.root is not None:
