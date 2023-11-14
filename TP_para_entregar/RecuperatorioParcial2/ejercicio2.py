@@ -63,3 +63,24 @@ for tree in expancionMinima:
             max_node = value
 
 print(f"Arista de valor maximo: {max_node[0]} y {max_node[1]} comparten {max_value} episodios")
+
+#Extra) Camino mas corto desde Yoda a Rey
+print ('Extra) Camino mas corto desde Yoda a Rey')
+
+ori = 'Yoda'
+des = 'Rey'
+origen = grafo.search_vertice(ori)
+destino = grafo.search_vertice(des)
+camino_mas_corto = None
+if(origen is not None and destino is not None):
+    if(grafo.has_path(ori, des)):
+        camino_mas_corto = grafo.dijkstra(ori, des)
+        fin = des
+        while camino_mas_corto.size() > 0:
+            value = camino_mas_corto.pop()
+            if fin == value[0]:
+                print(value[0], value[1])
+                fin = value[2]
+        print (camino_mas_corto)
+
+
