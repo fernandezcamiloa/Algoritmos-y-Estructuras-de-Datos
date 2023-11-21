@@ -70,22 +70,13 @@ class Lista():
     def barrido_cantidad_torneos_ganados(self, cantidad_victorias):
         for value in self.__elements:
             if value[0].ct_ganados > cantidad_victorias:
-                print(value[0])  
+                print(value[0]) 
 
     def barrido_porcentaje_batallas_79(self):
         for value in self.__elements:
             porcentaje_79 = (value[0].cb_ganadas  / (value[0].cb_ganadas + value[0].cb_perdidas)) * 100
             if (porcentaje_79 > 79):
-                print(porcentaje_79)  
-
-# f. los entrenadores que tengan Pokémons de tipo fuego y planta o agua/volador
-    def barrido_aguafuego_plantavolador (self):
-        for value in self.__elements:
-            if value[0].Pokemons.tipo == "fuego" and value[0].subtipo == "planta":
-                print(value[0])
-                print('Lista de Pokemons:')
-                value[1].barrido()
-                print()  
+                print(value[0].nombre)
 
     def order_by(self, criterio=None, reverse=False):
         dic_atributos = self.__elements[0][0].__dict__
